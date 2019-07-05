@@ -4,5 +4,7 @@ mostrar el resulto por medio de "ALERT"*/
 function sumar()
 {
 
+    ///Comentario
+
 }
 
