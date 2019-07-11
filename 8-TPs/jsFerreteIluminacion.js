@@ -31,11 +31,19 @@ function CalcularPrecio ()
         document.getElementById("precioDescuento").value=precioFinal;
            
      }
-     else if(cantidad==5 && marca=="ArgentinaLuz")
+     else if(cantidad==5 /*&& marca=="ArgentinaLuz"*/)
      {
-         precioFinal=(precio*cantidad)*60/100 //40% de dto
-         document.getElementById("precioDescuento").value=precioFinal;
-     }
+        /* precioFinal=(precio*cantidad)*60/100 //40% de dto
+         document.getElementById("precioDescuento").value=precioFinal;*/
+         if(marca=="ArgentinaLuz") 
+         {
+             //40%
+         }
+         else
+         { 
+             //30%
+         }
+    }
      else if (cantida==5 && marca !="ArgentinaLuz")
      {
          precioFinal=(precio*cantidad)*70/100; //30% de dto
@@ -68,7 +76,9 @@ function CalcularPrecio ()
          precioFinal=(precio*cantidad)*0.95;
          document.getElementById("precioDescuento").value=precioFinal;
      }
-     else if(precioFinal>120)
+     
+     
+     if(precioFinal>120)
      {
         iibb=precioFinal*0.1
         precioFinal=precioFinal+iibb;
