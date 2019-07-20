@@ -1,14 +1,30 @@
 function mostrar()
 {
+var numero;
+var acumuladorSuma=0;
+var acumuladorMultiplicacion=1;
+var contador=0;
+var respuesta="si";
 
-	var contador=0;
-	var positivo=0;
-	var negativo=1;
+while(respuesta=="si")
+{
+	numero=prompt("Indique un numero");
+	numero=parseInt(numero);
 	
-	var respuesta='si';
+		if(numero>0)
+		{
+		acumuladorSuma=acumuladorSuma+numero;
+		}
+		else{
+			acumuladorMultiplicacion=acumuladorMultiplicacion*numero;
+		}
+
+				
+	respuesta=prompt("Quiere seguir cargando otro numero?");
+}
 
 
-document.getElementById('suma').value=positivo;
-document.getElementById('producto').value=negativo;
+document.getElementById("suma").value=acumuladorSuma;
+document.getElementById("producto").value=acumuladorMultiplicacion;
 
 }//FIN DE LA FUNCIÓN
