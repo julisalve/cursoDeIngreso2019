@@ -11,14 +11,14 @@ var esPrimeraIteracion=true;
 while(respuesta/*!="no"*/)
 {
 	numero=prompt("Indique un numero");
-	numero=parseInt(numero);
+	
 
 	while(isNaN(numero)==true) // si se evalua entre -10 y 10 isNan(numero) || parseInt(numero)>10 || parseInt(numero)<-10
 	{
 		numero=prompt("Indique un valor numerico");
 		numero=parseInt(numero);
 	}
-
+	numero=parseInt(numero); //se parcea 
 	if(esPrimeraIteracion==true)// o contador ==0
 	{
 		numeroMax=numero;
