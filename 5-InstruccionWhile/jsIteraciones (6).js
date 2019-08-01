@@ -10,7 +10,7 @@ function mostrar()
 		numero=prompt("Indique otro numero");
 		numero=parseInt(numero);
 		contador++;
-		acumulador=acumulador+numero;	
+		acumulador=acumulador+numero; //o acumuladora +=numero	
 	}
 	
 	
