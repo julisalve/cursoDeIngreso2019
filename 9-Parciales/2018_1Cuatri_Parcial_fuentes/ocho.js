@@ -64,7 +64,7 @@ while(respuesta=="si")
         numeroNegativo=numeroNegativo+numero;
     }
 
-    respuesta=prompt("Quiere seguir cargando otro dato?");
+    
 
     if(contador==0 || numero<numeroMenor)
     {
@@ -78,16 +78,23 @@ while(respuesta=="si")
         letraMayor=letra;
         contador++;
     }
-
-
+    respuesta=prompt("Quiere seguir cargando otro dato?");
 }
 
 promedio=numeroPositivo/acumuladorNumerosPos;
 if(isNaN(promedio)==true)
 {
-    promedio="No hay numeros pares";
+    promedio="No hay numeros positivos";
 }
-document.write("A)La cantidad de numeros pares es: "+cantidadNumerosPares+"<br>"+"B) La cantidad de numero impares es: "+cantidadNumerosImpares+"<br>"+"C) La cantidad de numeros cero es: "+cantidadNumeroCero+"<br>"+"D) El promedio de numeros pares es :"+ promedio+ "<br>"+ "E) La suma de numeros negativos es: "+numeroNegativo+ "<br>"+ "D) El numero y letra menor es "+numeroMenor+letraMenor+" y el numero y la letra mayor es: "+numeroMayor+letraMayor)
+
+
+
+document.write("A)La cantidad de numeros pares es: "+cantidadNumerosPares+"<br>")
+document.write("B) La cantidad de numero impares es: "+cantidadNumerosImpares+"<br>")
+document.write("C) La cantidad de numeros cero es: "+cantidadNumeroCero+"<br>") 
+document.write("D) El promedio de todos los numeros positivos es: "+promedio+"<br>");
+document.write("E) La suma de numeros negativos es: "+numeroNegativo+ "<br>")
+document.write("F) El numero y letra menor es "+numeroMenor+letraMenor+" y el numero y la letra mayor es: "+numeroMayor+letraMayor)
 
 
 }

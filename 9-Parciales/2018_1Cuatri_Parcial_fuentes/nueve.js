@@ -6,6 +6,7 @@ function mostrar()
     var respuesta="si";
     var cantTempPares=0;
     var marcaMasPesada;
+    var marcaMenosPesada;
     var productosMenosCeroGrados=0;
     var promedio;
     var acumuladorPeso=0;
@@ -30,6 +31,7 @@ function mostrar()
         if(contador==0)
         {
             pesoMax=peso;
+            pesoMin=peso;
             marcaMasPesada=marca;
             
         }
@@ -37,6 +39,11 @@ function mostrar()
         {
            pesoMax=peso;
             marcaMasPesada=marca;
+        }
+        else if (peso<pesoMin)
+        {
+            pesoMin=peso;
+            marcaMenosPesada=marca;
         }
         contador++;
         acumuladorPeso=acumuladorPeso+peso;
@@ -51,7 +58,7 @@ function mostrar()
             temperatura=parseInt(temperatura);
 
         }
-        if(temperatura%2==0)
+        if(temperatura%2==0 && temperatura!=0)
             {
             cantTempPares++;   
             }
@@ -60,10 +67,7 @@ function mostrar()
         {
             productosMenosCeroGrados++;
         }
-        else
-        {
-            productosMenosCeroGrados="No hay productos que se conserven a menos de cero grados";
-        }
+      
 
         respuesta=prompt("Quiere seguir cargando mas datos?");
     
@@ -79,4 +83,5 @@ function mostrar()
     document.write("B) La marca mas pesada es: "+marcaMasPesada+"<br>")
     document.write("C) La cantidad de producto que se conserva a menos de 0 grados es: "+ productosMenosCeroGrados+"<br>") 
     document.write("D) El promedio del peso de todos los productos es: "+ promedio)
+    document.write("F)El peso maximos es: "+pesoMax+ " y el minimo es: "+pesoMin);
 }
