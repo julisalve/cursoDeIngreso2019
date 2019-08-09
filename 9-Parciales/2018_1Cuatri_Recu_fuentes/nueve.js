@@ -1,91 +1,91 @@
 function mostrar()
 {
-var animales;
+var animal;
 var peso;
 var temperatura;
-var respuesta="si";
-var cantTempPares=0;
-var tempMasPesado;
+var respuesta;
+var cantTemPares=0;
 var animalMasPesado;
-var animalesBajoCero=0;
-var promedio;
-var animalMasPesado;
-var animalMasLiviano;
-var pesoMax;
-var contador=0;
-var acumulador=0;
+var temperaturaMasPesado;
+var masPesado;
+var cantAnimalesMenosCeroGrados=0;
+var promedioPeso;
+var acumuladorPeso=0;
 var pesoMaxBajoCero;
 var pesoMinBajoCero;
+var contador=0;
 
 
-while(respuesta=="si")
+
+do
 {
-    animales=prompt("Indique nombre de un animal");
-    peso=prompt("Indique peso")
-    peso=parseInt(peso)
+animal=prompt("Indique el nombre de un animal");
 
-    while(isNaN(peso)==true || peso<1 || peso>1000)
-    {
-        peso=prompt("No es un peso valido. Reingrese");
-        peso=parseInt(peso);
-    }
-
-    acumulador=acumulador+peso;
-
-    temperatura=prompt("Indique temperatura");
-    temperatura=parseInt(temperatura);
-
-    while(isNaN(temperatura)==true || temperatura<-30 || temperatura>30)
-    {
-        temperatura=prompt("Temperatura no valida, reingrese");
-        temperatura=parseInt(temperatura);
-    }
-
-    if(contador==0 || peso>pesoMax)
-    {
-        pesoMax=peso;
-        animalMasPesado=animales;
-        tempMasPesado=temperatura;
-    }
-    
-    contador++;
-   
-    if(temperatura%2==0 && temperatura!=0)
-    {
-        cantTempPares++;
-    }
-
-    if(temperatura<0)
-    {
-       
-
-        if(animalesBajoCero==0 || peso>pesoMaxBajoCero)
-        {
-        pesoMaxBajoCero=peso;
-        }
-        
-        if(animalesBajoCero==0 || peso<pesoMinBajoCero)
-        {
-        pesoMinBajoCero=peso;
-        }
-
-        animalesBajoCero++;
-        
-    }
-
-    
-
-    promedio=acumulador/contador;
-    respuesta=prompt("Quiere seguir cargando datos?");
-
-
-    
+while(isNaN(animal)==false)
+{
+    animal=prompt("No es un nombre de animal. Reingrese");
 }
 
-document.write("A) La cantidad de temperaturas pares es: "+cantTempPares+ "<br>");
-document.write("B) El nombre del animal mas pesado es: "+animalMasPesado+ " y su temperatura es: "+tempMasPesado+"<br>");
-document.write("C) La cantidad de animales que viven bajo cero es: "+animalesBajoCero+ "<br>");
-document.write("D) El promedio del peso es: "+promedio+"<br>");
-document.write("F) El peso max de los animales bajo cero es: "+pesoMaxBajoCero+ " y el peso minimo de los animales bajo cero es: "+pesoMinBajoCero);
+peso=prompt("Indique peso");
+peso=parseInt(peso);
 
+while(isNaN(peso)==true || peso>1000 || peso<1)
+{
+    peso=prompt("No es un peso valido. Reingrese");
+    peso=parseInt(peso);
+}
+
+temperatura=prompt("Indique temperatura del habitat");
+temperatura=parseInt(temperatura);
+
+while(isNaN(temperatura)==true || temperatura>30 || temperatura<-30)
+{
+    temperatura=prompt("No es una temperatura valida. Reingrese");
+    temperatura=parseInt(temperatura);
+}
+
+if(temperatura%2==0 && temperatura!=0)
+{
+    cantTemPares++;
+}
+
+
+if(contador==0 || peso>masPesado)
+{
+    masPesado=peso;
+    animalMasPesado=animal;
+    temperaturaMasPesado=temperatura;
+}
+
+if(temperatura<0)
+{
+    if(cantAnimalesMenosCeroGrados==0 || pesoMaxBajoCero<peso)
+    {
+        pesoMaxBajoCero=peso;
+    }
+
+    if(cantAnimalesMenosCeroGrados==0 || pesoMinBajoCero>peso)
+    {
+        pesoMinBajoCero=peso;
+    }
+    
+    cantAnimalesMenosCeroGrados++;
+}
+
+
+acumuladorPeso=peso+acumuladorPeso;
+contador++;
+
+respuesta=prompt("Quiere seguir cargando datos?");
+}
+while(respuesta=="si")
+
+
+promedioPeso=acumuladorPeso/contador;
+
+document.write("A) La cantidad de temperaturas pares es: "+cantTemPares+"<br>");
+document.write("B) El nombre del animal mas pesado es "+animalMasPesado+" y su temperatura es de: "+temperaturaMasPesado+ "<br>");
+document.write("C) La cantidad de animales que viven a menos de cero grados es: "+cantAnimalesMenosCeroGrados+"<br>");
+document.write("D) El promedio del peso de todos los animales es: "+ promedioPeso+ "<br>");
+document.write("F) El peso maximo del animal que vive menos bajo cero es:" +pesoMaxBajoCero+" y el minimo es "+pesoMinBajoCero );
 }
